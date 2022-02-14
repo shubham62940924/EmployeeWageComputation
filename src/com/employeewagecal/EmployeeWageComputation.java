@@ -6,6 +6,7 @@ public class EmployeeWageComputation {
 	static final int IS_FULL_TIME = 1;
 	static final int IS_PART_TIME = 2;
 	static final int EMPLOYEE_RATE_PER_HOUR = 20;
+	static final int NUMBER_OF_WORKING_DAYS = 20;
 
 	public static int empCheckWage() {
 		int empWorkingHours = 0;
@@ -37,10 +38,16 @@ public class EmployeeWageComputation {
 	public static void main(String[] args) {
 		int empWorkingHours;
 		int empWagePerDay;
-		empWorkingHours = empCheckWage();
-		empWagePerDay = empWagePerDayStatus(empWorkingHours);
-		System.out.println("Employee Wage per day: " + empWagePerDay);
+		int days = 0;
+		int EmployeeMonthlyWage = 0;
+		while (days < NUMBER_OF_WORKING_DAYS) {
+			days++;
+
+			empWorkingHours = empCheckWage();
+			empWagePerDay = empWagePerDayStatus(empWorkingHours);
+			EmployeeMonthlyWage += empWagePerDay;
+		}
+		System.out.println("Employee Wage per month: " + EmployeeMonthlyWage);
 
 	}
-
 }
