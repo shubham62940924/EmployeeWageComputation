@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class EmployeeWageComputation {
 	static final int IS_FULL_TIME = 1;
+	static final int IS_PART_TIME = 2;
 	static final int EMPLOYEE_RATE_PER_HOUR = 20;
 
 	public static int empCheckWage() {
@@ -11,11 +12,13 @@ public class EmployeeWageComputation {
 		Random rand = new Random();
 		int empCheck = rand.nextInt(2);
 		if (empCheck == IS_FULL_TIME) {
-			System.out.println("Employee is Present");
+
 			empWorkingHours = 8;
+		} else if (empCheck == IS_PART_TIME) {
+			empWorkingHours = 4;
 
 		} else {
-			System.out.println("Employee is absent ");
+
 			empWorkingHours = 0;
 		}
 		return empWorkingHours;
